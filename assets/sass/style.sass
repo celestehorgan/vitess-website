@@ -35,8 +35,11 @@ $input-shadow: none
 
 $code: $dark
 $colors: mergeColorMaps(("stack-overflow-orange": ($stack-overflow-orange, $white), "orange": ($orange, $orange-invert), "twitter-blue": ($twitter-blue, $white), "slack-green": ($slack-green, $white)), $colors)
+$border: $grey-lighter
 
 @import "bulma/bulma"
+
+@import "bulma/sass/components/tabs"
 
 @import "docs"
 
@@ -189,3 +192,12 @@ figure
 .toc
   &.is-active
     position: fixed
+
+#tabs-with-content 
+  & .tab-content 
+    padding: 1rem
+    display: none
+    &.is-active 
+      display: block
+  & .tabs:not(:last-child)
+      margin-bottom: 0
